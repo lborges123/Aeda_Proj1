@@ -51,6 +51,13 @@ public:
 	Incendio_Domestico(string local_Acidente, int data, int num_Carros_Bombeiros, int num_Bombeiros, bool moradia);
 };
 
+/* class Assalto_particular : public Assalto {}
+
+class Assalto_comercial : public Assalto {}
+
+class Acidente_Viacao_Nacional : public Acidente_Viacao {}
+
+class Acidente_Viacao_AutoEstrada : public Acidente-Viacao {} */
 
 class Posto_De_Socorro {
 	friend class Acidente;
