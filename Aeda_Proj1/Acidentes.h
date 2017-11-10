@@ -1,95 +1,102 @@
-#pragma once
-#include <iostream>
-#include <string>
-using namespace std;
+#include "ServicoEmergencia.h"
 
 class Acidente {
-	friend class Posto_De_Socorro;
+	friend class PostoDeSocorro;
 private:
-	string local_Acidente;
+	string localAcidente;
 	int data;
+	pair <int, int> coord;
 public:
-	Acidente(string local_Acidente, int data);
+	Acidente(string localAcidente, int data, int x, int y);
 };
-
-
 class Incendio : public Acidente {
 private:
-	int num_Carros_Bombeiros;
-	int num_Bombeiros;
+	int numCarrosBombeiros;
+	int numBombeiros;
 public:
-	Incendio(string local_Acidente, int data, int num_Carros_Bombeiros, int num_Bombeiros);
+	Incendio(string localAcidente, int data, int x, int y, int numCarrosBombeiros, int numBombeiros);
+	void setNumCarros(int numCarros);
+	void setNumBombeiros(int numBombeiros);
+};
+
+class IncendioFlorestal : public Incendio {
+private:
+	int areaChamas;
+public:
+	IncendioFlorestal(string localAcidente, int data, int x, int y, int numCarrosBombeiros, int numBombeiros, int areaChamas);
+	int numCarrosNecessarios(int areaArdida);
+	int numBombeirosNecessarios(int areaArdida);
+};
+class IncendioDomestico : public Incendio {
+private:
+	bool moradia;          //o que por aqui?
+public:
+	IncendioDomestico(string localAcidente, int data, int x, int y, int numCarrosBombeiros, int numBombeiros, bool moradia);
 };
 
 class Assalto : public Acidente {
 private:
-	int num_Feridos;
+	int numFeridos;
 public:
-	virtual bool precisa_de_amb() const = 0;
-	Assalto(string local_Acidente, int data, int num_Feridos);
+	virtual bool precisadeamb() const = 0;
+	Assalto(string localAcidente, int data, int x, int y, int numFeridos);
 };
 
-class Acidente_Viacao : public Acidente {
+class AcidenteViacao : public Acidente {
 private:
-	int num_Feridos_Graves;
-	int num_Veiculos_Envolv;
+	int numFeridosGraves;
+	int numVeiculosEnvolv;
 public:
-	virtual bool precisa_de_amb() const = 0;
-	Acidente_Viacao(string local_Acidente, int data, int num_Feridos_Graves, int num_Veiculos_Envolv);
+	virtual bool precisadeamb() const = 0;
+	AcidenteViacao(string localAcidente, int data, int x, int y, int numFeridosGraves, int numVeiculosEnvolv);
 };
 
-class Incendio_Florestal : public Incendio {
-private:
-	int area_Chamas;
-public:
-	Incendio_Florestal(string local_Acidente, int data, int num_Carros_Bombeiros, int num_Bombeiros, int area_Chamas);
-};
-class Incendio_Domestico : public Incendio {
-private:
-	bool moradia;          //o que por aqui?
-public:
-	Incendio_Domestico(string local_Acidente, int data, int num_Carros_Bombeiros, int num_Bombeiros, bool moradia);
-};
 
-/* class Assalto_particular : public Assalto {}
+/* class Assaltoparticular : public Assalto {}
 
-class Assalto_comercial : public Assalto {}
+class Assaltocomercial : public Assalto {}
 
-class Acidente_Viacao_Nacional : public Acidente_Viacao {}
+class AcidenteViacaoNacional : public AcidenteViacao {}
 
-class Acidente_Viacao_AutoEstrada : public Acidente-Viacao {} */
+class AcidenteViacaoAutoEstrada : public Acidente-Viacao {} */
 
-class Posto_De_Socorro {
+class PostoDeSocorro {
 	friend class Acidente;
 private:
-	int num_Socorristas;
-	int num_Veiculos;
+	int numSocorristas;
+	int numVeiculos;
 	string local;
+	pair<int, int> coord;
 public:
-	Posto_De_Socorro(int num_Socorristas, int num_Veiculos, string local);
+	PostoDeSocorro(int numSocorristas, int numVeiculos, string local, int x, int y);
+	void setNumVeiculos(int numVeiculos);
+	//virtual string tipo() = 0;
 };
 
-class Bombeiros : public Posto_De_Socorro {
+class Bombeiros : public PostoDeSocorro {
 private:
-	int num_Ambulancias;
-	int num_Autotanques;
+	int numAmbulancias;
+	int numAutotanques;
 public:
-	Bombeiros(int num_Socorristas, int num_Veiculos, string local, int num_Ambulancias, int num_Autotanques);
+	Bombeiros(int numSocorristas, int numVeiculos, string local, int x, int y, int numAmbulancias, int numAutotanques);
+	//string tipo() = 0;
 };
 
-class Policia : public Posto_De_Socorro {
+class Policia : public PostoDeSocorro {
 private:
-	int num_Carros;
-	int num_Motos;
+	int numCarros;
+	int numMotos;
 public:
-	Policia(int num_Socorristas, int num_Veiculos, string local, int num_Carros, int num_Motos);
+	Policia(int numSocorristas, int numVeiculos, string local, int x, int y, int numCarros, int numMotos);
+	//string tipo() = 0;
 };
 
-class INEM : public Posto_De_Socorro {
+class INEM : public PostoDeSocorro {
 private:
-	int num_Ambulancias;
-	int num_Carros;
-	int num_Motos;
+	int numAmbulancias;
+	int numCarros;
+	int numMotos;
 public:
-	INEM(int num_Socorristas, int num_Veiculos, string local, int num_Ambulancias, int num_Carros, int num_Motos);
+	INEM(int numSocorristas, int numVeiculos, string local, int x, int y, int numAmbulancias, int numCarros, int numMotos);
+	//string tipo() = 0;
 };

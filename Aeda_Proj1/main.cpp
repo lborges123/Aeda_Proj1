@@ -1,3 +1,6 @@
 #include <vector>
+#include "Acidentes.h"
+int main() {
 
-int main() {}
+	return 0;
+}
