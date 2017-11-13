@@ -2,7 +2,7 @@
 
 class Acidente {
 	friend class PostoDeSocorro;
-private:
+protected:
 	string localAcidente;
 	int data;
 	pair <int, int> coord;
@@ -10,11 +10,11 @@ public:
 	Acidente(string localAcidente, int data, int x, int y);
 };
 class Incendio : public Acidente {
-private:
+protected:
 	int numCarrosBombeiros;
 	int numBombeiros;
 public:
-	Incendio(string localAcidente, int data, int x, int y, int numCarrosBombeiros, int numBombeiros);
+	Incendio(string localAcidente, int data,int x , int y, int numCarrosBombeiros, int numBombeiros);
 	void setNumCarros(int numCarros);
 	void setNumBombeiros(int numBombeiros);
 };
@@ -26,14 +26,26 @@ public:
 	IncendioFlorestal(string localAcidente, int data, int x, int y, int numCarrosBombeiros, int numBombeiros, int areaChamas);
 	int numCarrosNecessarios(int areaArdida);
 	int numBombeirosNecessarios(int areaArdida);
+	void print();
 };
-class IncendioDomestico : public Incendio {
+class IncendioMoradia : public Incendio {
 private:
-	bool moradia;          //o que por aqui?
+	int nPessoas;          
 public:
-	IncendioDomestico(string localAcidente, int data, int x, int y, int numCarrosBombeiros, int numBombeiros, bool moradia);
+	IncendioMoradia(string localAcidente, int data, int x, int y, int numCarrosBombeiros, int numBombeiros, int nPessoas);
+	int numCarrosNecessarios(int nPessoas);
+	int numBombeirosNecessarios(int nPessoas);
+	void print();
 };
-
+class IncendioApartamento : public Incendio {
+private:
+	int andares;          
+public:
+	IncendioApartamento(string localAcidente, int data, int x, int y, int numCarrosBombeiros, int numBombeiros, int andares);
+	int numCarrosNecessarios(int andares);
+	int numBombeirosNecessarios(int andares);
+	void print();
+};
 class Assalto : public Acidente {
 private:
 	int numFeridos;

@@ -146,6 +146,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Acidentes.h" />
+    <ClInclude Include="AervicoEmergencia.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Acidentes.cpp" />
+    <ClCompile Include="AcidentesViacao.cpp" />
+    <ClCompile Include="Assaltos.cpp" />
+    <ClCompile Include="Bombeiros.cpp" />
+    <ClCompile Include="Incendios.cpp" />
+    <ClCompile Include="INEM.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Policia.cpp" />
+    <ClCompile Include="PostoDeSocorro.cpp" />
+    <ClCompile Include="ServicoEmergencia.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
