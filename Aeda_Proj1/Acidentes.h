@@ -8,7 +8,10 @@ private:
 	pair <int, int> coord;
 public:
 	Acidente(string localAcidente, int data, int x, int y);
+	virtual bool precisadeamb() const = 0;
 };
+
+
 class Incendio : public Acidente {
 private:
 	int numCarrosBombeiros;
@@ -38,18 +41,11 @@ class Assalto : public Acidente {
 private:
 	int numFeridos;
 public:
-	virtual bool precisadeamb() const = 0;
+	bool precisadeamb() const;
 	Assalto(string localAcidente, int data, int x, int y, int numFeridos);
 };
 
-class AcidenteViacao : public Acidente {
-private:
-	int numFeridosGraves;
-	int numVeiculosEnvolv;
-public:
-	virtual bool precisadeamb() const = 0;
-	AcidenteViacao(string localAcidente, int data, int x, int y, int numFeridosGraves, int numVeiculosEnvolv);
-};
+
 
 
 /* class Assaltoparticular : public Assalto {}
@@ -60,18 +56,7 @@ class AcidenteViacaoNacional : public AcidenteViacao {}
 
 class AcidenteViacaoAutoEstrada : public Acidente-Viacao {} */
 
-class PostoDeSocorro {
-	friend class Acidente;
-private:
-	int numSocorristas;
-	int numVeiculos;
-	string local;
-	pair<int, int> coord;
-public:
-	PostoDeSocorro(int numSocorristas, int numVeiculos, string local, int x, int y);
-	void setNumVeiculos(int numVeiculos);
-	//virtual string tipo() = 0;
-};
+
 
 class Bombeiros : public PostoDeSocorro {
 private:
@@ -91,12 +76,3 @@ public:
 	//string tipo() = 0;
 };
 
-class INEM : public PostoDeSocorro {
-private:
-	int numAmbulancias;
-	int numCarros;
-	int numMotos;
-public:
-	INEM(int numSocorristas, int numVeiculos, string local, int x, int y, int numAmbulancias, int numCarros, int numMotos);
-	//string tipo() = 0;
-};
