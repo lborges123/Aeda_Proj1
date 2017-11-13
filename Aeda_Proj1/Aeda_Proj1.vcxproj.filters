@@ -18,36 +18,36 @@
     <ClInclude Include="Acidentes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AervicoEmergencia.h">
+    <ClInclude Include="ServicoEmergencia.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Acidentes.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="Incendios.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="AcidentesViacao.cpp">
-      <Filter>Resource Files</Filter>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Assaltos.cpp">
+    <ClCompile Include="PostoDeSocorro.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="Bombeiros.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="INEM.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
     <ClCompile Include="Policia.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="PostoDeSocorro.cpp">
+    <ClCompile Include="INEM.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Assaltos.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AcidentesViacao.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="ServicoEmergencia.cpp">

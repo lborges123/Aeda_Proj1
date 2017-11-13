@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{B853FC9F-7247-4EA9-87F4-FAFB06FDC859}</ProjectGuid>
+    <ProjectGuid>{051E3D98-6E0C-4FC7-927F-B3DD8C8C2207}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Aeda_projeto</RootNamespace>
+    <RootNamespace>Aeda</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -146,20 +146,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Acidentes.h" />
-    <ClInclude Include="ServicoEmergencia.h" />
+    <ClCompile Include="..\..\Aeda_Proj1\Aeda_Proj1\main.cpp" />
+    <ClCompile Include="Acidentes.cpp" />
+    <ClCompile Include="Incendios.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Acidentes.cpp" />
-    <ClCompile Include="AcidentesViacao.cpp" />
-    <ClCompile Include="Assaltos.cpp" />
-    <ClCompile Include="Bombeiros.cpp" />
-    <ClCompile Include="Incendios.cpp" />
-    <ClCompile Include="INEM.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Policia.cpp" />
-    <ClCompile Include="PostoDeSocorro.cpp" />
-    <ClCompile Include="ServicoEmergencia.cpp" />
+    <ClInclude Include="Acidentes.h" />
+    <ClInclude Include="Incendios.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
