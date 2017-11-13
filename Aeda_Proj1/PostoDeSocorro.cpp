@@ -1,5 +1,7 @@
 #include "Acidentes.h"
 
+
+
 PostoDeSocorro::PostoDeSocorro(int numSocorristas, int numVeiculos, string local, int x, int y) {
 	this->numSocorristas = numSocorristas;
 	this->local = local;
