@@ -14,3 +14,22 @@ public:
 	void setNumVeiculos(int numVeiculos);
 	//virtual string tipo() = 0;
 };
+
+
+class Bombeiros : public PostoDeSocorro {
+private:
+	int numAmbulancias;
+	int numAutotanques;
+public:
+	Bombeiros(int numSocorristas, int numVeiculos, string local, int x, int y, int numAmbulancias, int numAutotanques);
+	//string tipo() = 0;
+};
+
+class Policia : public PostoDeSocorro {
+private:
+	int numCarros;
+	int numMotos;
+public:
+	Policia(int numSocorristas, int numVeiculos, string local, int x, int y, int numCarros, int numMotos);
+	//string tipo() = 0;
+};

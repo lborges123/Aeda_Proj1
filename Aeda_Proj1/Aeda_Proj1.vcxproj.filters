@@ -21,6 +21,15 @@
     <ClInclude Include="ServicoEmergencia.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="INEM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AcidentesViacao.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PostosDeSocorro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Acidentes.cpp">

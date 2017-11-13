@@ -1,4 +1,4 @@
-
+#include "PostosDeSocorro.h"
 
 class AcidenteViacao : public Acidente {
 private:
