@@ -55,10 +55,25 @@ public:
 };
 
 
-/* class Assaltoparticular : public Assalto {}
+class Assaltoparticular : public Assalto {
+private:
+	int numFeridos
 
-class Assaltocomercial : public Assalto {}
+public:
+	Assalto(string localAcidente, int data, int x, int y, int numFeridos);
+	virtual bool precisadeamb() const = 0;
+};
 
-class AcidenteViacaoNacional : public AcidenteViacao {}
+class Assaltocomercial : public Assalto {
+private:
+	int numFeridos
+
+public:
+	Assalto(string localAcidente, int data, int x, int y, int numFeridos);
+	virtual bool precisadeamb() const = 0;
+
+};
+
+/*class AcidenteViacaoNacional : public AcidenteViacao {}
 
 class AcidenteViacaoAutoEstrada : public Acidente-Viacao {} */
