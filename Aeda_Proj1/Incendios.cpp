@@ -1,4 +1,6 @@
+#pragma once
 #include "Acidentes.h"
+
 Incendio::Incendio(string localAcidente, int data, int x, int y, int numCarrosBombeiros, int numBombeiros) : Acidente(localAcidente, data, x, y) {
 	this->numBombeiros = numBombeiros;
 	this->numCarrosBombeiros = numCarrosBombeiros;
@@ -40,6 +42,8 @@ int IncendioMoradia::numBombeirosNecessarios(int nPessoas) {
 }
 IncendioApartamento::IncendioApartamento(string localAcidente, int data, int x, int y, int numCarrosBombeiros, int numBombeiros, int andares) : Incendio(localAcidente, data, x, y, numCarrosBombeiros, numBombeiros) {
 	this->andares = andares;
+	setNumCarros(numCarrosNecessarios(andares));
+	setNumBombeiros(numBombeirosNecessarios(andares));
 }
 void Incendio::setNumCarros(int numCarros) {
 	numCarrosBombeiros = numCarros;
@@ -72,5 +76,3 @@ void IncendioFlorestal::print() {
 	cout << "Acidente tipo: Incendio florestal " << localAcidente << "na localizacao x = " << coord.first << " y = " << coord.second << " em " << data << endl;
 	cout << " no qual sao precisos " << numCarrosBombeiros << " carros de bombeiros e " << numBombeiros << " bombeiros " << " no qual ha " << areaChamas << " hectares em chamas." << endl << endl;
 }
-
-//void print();

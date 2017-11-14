@@ -1,4 +1,4 @@
-#include "Acidentes.h"
+#pragma once
 #include "INEM.h"
 
 /* construtor vazio
