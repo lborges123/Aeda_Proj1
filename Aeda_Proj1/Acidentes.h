@@ -46,6 +46,7 @@ public:
 	int numBombeirosNecessarios(int andares);
 	void print();
 };
+
 class Assalto : public Acidente {
 private:
 	int numFeridos;
