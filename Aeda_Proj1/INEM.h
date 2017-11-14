@@ -1,5 +1,4 @@
-#include "PostoDeSocorro.h"
-#include "Acidentes.h"
+#include "PostosDeSocorro.h"
 
 
 class INEM : public PostoDeSocorro {

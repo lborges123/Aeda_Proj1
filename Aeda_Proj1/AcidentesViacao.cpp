@@ -1,4 +1,4 @@
-#include "Acidentes.h"
+#include "AcidentesViacao.h"
 
 
 AcidenteViacao::AcidenteViacao(string localAcidente, int data, int x, int y, int numFeridosGraves, int numVeiculosEnvolv) : Acidente(localAcidente, data, x, y) {
@@ -7,7 +7,7 @@ AcidenteViacao::AcidenteViacao(string localAcidente, int data, int x, int y, int
 }
 
 
-bool AcidenteViacao::precisadeamb(){
+bool AcidenteViacao::precisadeamb() const {
 	if (numFeridosGraves)
 		return true;
 	return false;
