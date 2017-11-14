@@ -1,4 +1,5 @@
 #include "ServicoEmergencia.h"
+#pragma once
 
 class Acidente {
 	friend class PostoDeSocorro;
