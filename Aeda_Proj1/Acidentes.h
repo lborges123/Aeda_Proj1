@@ -59,19 +59,19 @@ public:
 
 class Assaltoparticular : public Assalto {
 private:
-	int numFeridos
+	int numFeridos;
 
 public:
-	Assalto(string localAcidente, int data, int x, int y, int numFeridos);
+	Assaltoparticular(string localAcidente, int data, int x, int y, int numFeridos);
 	virtual bool precisadeamb() const = 0;
 };
 
 class Assaltocomercial : public Assalto {
 private:
-	int numFeridos
+	int numFeridos;
 
 public:
-	Assalto(string localAcidente, int data, int x, int y, int numFeridos);
+	Assaltocomercial(string localAcidente, int data, int x, int y, int numFeridos);
 	virtual bool precisadeamb() const = 0;
 
 };

@@ -8,4 +8,3 @@ Acidente::Acidente(string localAcidente, int data, int x, int y) {
 	pair<int, int> coord (x,y);
 	this->coord = coord;
 }
-

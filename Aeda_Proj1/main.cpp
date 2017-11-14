@@ -1,5 +1,3 @@
-#pragma once
-
 #include <fstream>
 #include "Acidentes.h"
 #include "ServicoEmergencia.h"
@@ -110,7 +108,7 @@ void addIncendio() {
 		//adicionarIncendioApartamento();
 		return;
 	}
-	
+
 	addIncendio();
 }
 void adicionarIncendioFloresta() {
@@ -135,7 +133,7 @@ void adicionarIncendioFloresta() {
 	{
 		cout << "String nao reconhecida!! Responda sim ou nao." << endl;
 		cin >> confirmacao;
-	} 
+	}
 	if (confirmacao == "sim" || confirmacao == "Sim" || confirmacao == "s" || confirmacao == "S")
 	{
 		//servicoEmergencia.addAcidente(IncendioFlorestal(local, data, x, y, 0, 0, area));
@@ -151,23 +149,23 @@ void adicionarIncendioFloresta() {
 
 	addIncendio();
 	return;
-	
-	
+
+
 	return;
 
 }
 
 int main() {
-	
+
 
 	cout << "Protecao civil - Trabalho de AEDA" << endl << endl;
 
 	cout << "Trabalho desenvolvido por Henrique Sendim, Luis Borges e Mariana Neto." << endl << endl;
-	
+
 	menuInicial();
 
 
-	
+
 
 	return 0;
 
