@@ -41,9 +41,6 @@
     <ClCompile Include="Incendios.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="PostoDeSocorro.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
@@ -63,6 +60,9 @@
       <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="Menu.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -13,9 +13,10 @@ private:
 	pair<int, int> coord;
 public:
 	PostoDeSocorro(int numSocorristas, int numVeiculos, string local, int x, int y);
+	PostoDeSocorro();
 	void setNumVeiculos(int numVeiculos);
 	//virtual string tipo() = 0;
-	virtual void printPostos();
+	//virtual void printPostos();
 };
 
 

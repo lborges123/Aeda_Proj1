@@ -8,9 +8,7 @@ Acidente::Acidente(string localAcidente, int data, int x, int y) {
 	pair<int, int> coord (x,y);
 	this->coord = coord;
 }
-<<<<<<< HEAD
+
 
 Acidente::Acidente(){}
 void Acidente::printAcid() {}
-=======
->>>>>>> origin/master

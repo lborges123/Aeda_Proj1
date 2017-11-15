@@ -1,8 +1,8 @@
-/*#include "menu.h"
+#include "menu.h"
 
 
 
-ServicoEmergencia<Acidente, PostoDeSocorro> servicoEmergencia;
+ServicoEmergencia servicoEmergencia;
 
 
 void menuInicial() {
@@ -17,7 +17,7 @@ void menuInicial() {
 	cout << "Sair?(0)" << endl;
 	int opcao;
 	cin >> opcao;
-
+	
 	switch (opcao)
 	{
 	case 1:
@@ -30,7 +30,7 @@ void menuInicial() {
 		//adicinarPostos();
 		return;
 	case 4:
-		verOsPostosSocorro();
+		verOsPostos();
 		return;
 	case 5:
 		//respostaAcidentes();
@@ -125,15 +125,10 @@ void adicionarIncendioFloresta() {
 	if (confirmacao == "sim" || confirmacao == "Sim" || confirmacao == "s" || confirmacao == "S")
 	{
 		IncendioFlorestal A(local, data, x, y, 0, 0, area);
-		servicoEmergencia.addAcidente(A);
+		servicoEmergencia.addAcidente(&A);
 		cout << "Incendio Florestal criado.";
 	}
-	cin.clear();
-	cin.ignore(1000);
-	cout << "Vai ser direcionado para o menu anterior.";
-	do {
-		cout << '\n' << "Presse a tecla Enter para continuar.";
-	} while (cin.get() != '\n');
+
 	
 	addIncendio();
 	return;
@@ -165,15 +160,9 @@ void adicionarIncendioMoradia() {
 	if (confirmacao == "sim" || confirmacao == "Sim" || confirmacao == "s" || confirmacao == "S")
 	{
 		IncendioMoradia A(local, data, x, y, 0, 0, nPessoas);
-		servicoEmergencia.addAcidente(A);
+		servicoEmergencia.addAcidente(&A);
 		cout << "Incendio em moradia criado.";
 	}
-	cin.clear();
-	cin.ignore(1000);
-	cout << "Vai ser direcionado para o menu anterior.";
-	do {
-	cout << '\n' << "Presse a tecla Enter para continuar.";
-	} while (cin.get() != '\n');
 	
 	addIncendio();
 	return;
@@ -204,26 +193,28 @@ void adicionarIncendioApartamento() {
 	if (confirmacao == "sim" || confirmacao == "Sim" || confirmacao == "s" || confirmacao == "S")
 	{
 		IncendioApartamento A(local, data, x, y, 0, 0, nPessoas);
-		servicoEmergencia.addAcidente(A);
+		servicoEmergencia.addAcidente(&A);
 		cout << "Incendio em moradia criado.";
 	}
-	cin.clear();
-	cin.ignore(1000);
-	cout << "Vai ser direcionado para o menu anterior.";
-	do {
-	cout << '\n' << "Presse a tecla Enter para continuar.";
-	} while (cin.get() != '\n');
+
 	
 	addIncendio();
 	return;
 }
 
 void verOsAcidentes() {
+	system("cls");
+	string ab;
+
 	servicoEmergencia.printAcidentes();
+	cout << "\n\nPrima enter para continuar";
+	cin.ignore();
+	cin.ignore();
+	
+	system("cls");
 	menuInicial();
 }
 void verOsPostos() {
-	servicoEmergencia.printPostos();
+	//servicoEmergencia.printPostos();
 	menuInicial();
 }
-*/

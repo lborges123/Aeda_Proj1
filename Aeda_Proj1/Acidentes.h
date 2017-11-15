@@ -1,6 +1,14 @@
 
 #pragma once
-#include "ServicoEmergencia.h"
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include <utility>
+#include <fstream>
+
+using namespace std;
+
 
 
 class Acidente {
@@ -55,44 +63,29 @@ public:
 };
 
 class Assalto : public Acidente {
-private:
+protected:
 	int numFeridos;
 	bool precisadeamb;
 public:
 	
 	Assalto(string localAcidente, int data, int x, int y, int numFeridos);
+	Assalto::Assalto();
+	void setNumFeridos(int numFeridos);
 };
 
 
 class Assaltoparticular : public Assalto {
-private:
-	int numFeridos;
-<<<<<<< HEAD
-	bool precisadeamb;
 public:
 	Assaltoparticular(string localAcidente, int data, int x, int y, int numFeridos);
-=======
-
-public:
-	Assaltoparticular(string localAcidente, int data, int x, int y, int numFeridos);
-	virtual bool precisadeamb() const = 0;
->>>>>>> origin/master
+	void print();
+	bool precisadeamb() const;
 };
 
 class Assaltocomercial : public Assalto {
-private:
-	int numFeridos;
-<<<<<<< HEAD
-	bool precisadeamb;
 public:
 	Assaltocomercial(string localAcidente, int data, int x, int y, int numFeridos);
-=======
-
-public:
-	Assaltocomercial(string localAcidente, int data, int x, int y, int numFeridos);
-	virtual bool precisadeamb() const = 0;
->>>>>>> origin/master
-
+	void print();
+	bool precisadeamb() const;
 };
 
 /*class AcidenteViacaoNacional : public AcidenteViacao {}
