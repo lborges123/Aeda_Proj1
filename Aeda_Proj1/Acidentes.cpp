@@ -9,3 +9,5 @@ Acidente::Acidente(string localAcidente, int data, int x, int y) {
 	this->coord = coord;
 }
 
+Acidente::Acidente(){}
+void Acidente::printAcid() {}

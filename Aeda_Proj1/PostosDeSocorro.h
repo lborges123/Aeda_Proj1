@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Acidentes.h"
 
 
@@ -14,6 +15,7 @@ public:
 	PostoDeSocorro(int numSocorristas, int numVeiculos, string local, int x, int y);
 	void setNumVeiculos(int numVeiculos);
 	//virtual string tipo() = 0;
+	virtual void printPostos();
 };
 
 
@@ -24,6 +26,7 @@ private:
 public:
 	Bombeiros(int numSocorristas, int numVeiculos, string local, int x, int y, int numAmbulancias, int numAutotanques);
 	//string tipo() = 0;
+	void printPostos();
 };
 
 class Policia : public PostoDeSocorro {
@@ -33,4 +36,5 @@ private:
 public:
 	Policia(int numSocorristas, int numVeiculos, string local, int x, int y, int numCarros, int numMotos);
 	//string tipo() = 0;
+	void printPostos();
 };
