@@ -53,6 +53,7 @@ public:
 	int numBombeirosNecessarios(int andares);
 	void printAcid();
 };
+
 class Assalto : public Acidente {
 private:
 	int numFeridos;
@@ -66,17 +67,31 @@ public:
 class Assaltoparticular : public Assalto {
 private:
 	int numFeridos;
+<<<<<<< HEAD
 	bool precisadeamb;
 public:
 	Assaltoparticular(string localAcidente, int data, int x, int y, int numFeridos);
+=======
+
+public:
+	Assaltoparticular(string localAcidente, int data, int x, int y, int numFeridos);
+	virtual bool precisadeamb() const = 0;
+>>>>>>> origin/master
 };
 
 class Assaltocomercial : public Assalto {
 private:
 	int numFeridos;
+<<<<<<< HEAD
 	bool precisadeamb;
 public:
 	Assaltocomercial(string localAcidente, int data, int x, int y, int numFeridos);
+=======
+
+public:
+	Assaltocomercial(string localAcidente, int data, int x, int y, int numFeridos);
+	virtual bool precisadeamb() const = 0;
+>>>>>>> origin/master
 
 };
 
