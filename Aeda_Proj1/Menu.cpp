@@ -7,14 +7,14 @@ ServicoEmergencia servicoEmergencia;
 
 void menuInicial() {
 
-	cout << "O que pretende fazer?" << endl << endl;
-
-	cout << "Adicionar/remover um acidente?(1)" << endl;
-	cout << "Ver os acidentes?(2)" << endl;
-	cout << "Adicionar/remover postos de socorro?(3)" << endl;
-	cout << "Ver os postos de socorro?(4)" << endl;
-	cout << "Reposta a um acidente?(5)" << endl;
-	cout << "Sair?(0)" << endl;
+	cout << "O que pretende fazer?" << endl;
+	cout << "------------------------------------------------" << endl;
+	cout << "[1] Adicionar/remover um acidente?" << endl;
+	cout << "[2] Ver os acidentes?" << endl;
+	cout << "[3] Adicionar/remover postos de socorro?" << endl;
+	cout << "[4] Ver os postos de socorro?" << endl;
+	cout << "[5] Reposta a um acidente?" << endl;
+	cout << "[0] Sair?" << endl;
 	int opcao;
 	cin >> opcao;
 	
@@ -44,11 +44,11 @@ void menuInicial() {
 }
 void adicionarAcidente() {
 	system("cls");
-	cout << "Que tipo de acidente pretende adicionar/remover?" << endl << endl;
-	cout << "Um incendio?(1)" << endl;
-	cout << "Um assalto?(2)" << endl;
-	cout << "Um acidente de viacao?(3)" << endl;
-	cout << "Sair e voltar ao menu inicial?(0)" << endl;
+	cout << "----------------------------------------------------" << endl;
+	cout << "[1] Um incendio?" << endl;
+	cout << "[2] Um assalto?" << endl;
+	cout << "[3] Um acidente de viacao?" << endl;
+	cout << "[0] Sair e voltar ao menu inicial?" << endl;
 	int opcao;
 	cin >> opcao;
 
@@ -62,7 +62,7 @@ void adicionarAcidente() {
 		addIncendio();
 		return;
 	case 2:
-		//addAssalto();
+		addAssalto();
 		return;
 	case 3:
 		//addAcidViacao();
@@ -201,6 +201,123 @@ void adicionarIncendioApartamento() {
 	addIncendio();
 	return;
 }
+
+void addAssalto() {
+	system("cls");
+	cout << "Que tipo de Assalto pretende adicionar?" << endl;
+	cout << "-------------------------------------------" << endl;
+	cout << "[1] Um comercial?" << endl;
+	cout << "[2] Um particular?" << endl;
+	cout << "[0] Sair e voltar ao menu anterior?" << endl << endl;
+	int opcao;
+	cin >> opcao;
+
+	switch (opcao)
+	{
+	case 0:
+		adicionarAcidente();
+		return;
+	case 1:
+		adicionarAssaltoComercial();
+		return;
+	case 2:
+		adicionarAssaltoParticular();
+		return;
+
+	}
+
+	addAssalto();
+}
+
+void adicionarAssaltoComercial() {
+	system("cls");
+	string local, confirmacao = "";
+	int data, x, y, numFeridos;
+	cout << "Menu adicionar assalto comercial" << endl << endl;
+
+	cout << "Qual o local do acidente? ";
+	cin >> local;
+	cout << "\nQuando e que se passou esse acidente? ";			//Melhorar depois
+	cin >> data;
+	cout << "\nQual a localizacao x.";					//Melhorar depois
+	cin >> x;
+	cout << "\nQual a localizacao y.";					//Melhorar depois
+	cin >> y;
+	cout << "\nQual o número de feridos? ";
+	cin >> numFeridos;
+	cout << "Pretende reportar um assalto comercial em " << local << " ,na data " << data << " com a localizacao " << x << " " << y << " em que " << numFeridos << " foram feridos?(S, N)" << endl;
+	cin >> confirmacao;
+	while (!((confirmacao == "sim") || (confirmacao == "Sim") || (confirmacao == "nao") || (confirmacao == "Nao") || (confirmacao == "s") || (confirmacao == "n") || (confirmacao == "S") || (confirmacao == "N")))
+	{
+		cout << "String nao reconhecida!! Responda sim ou nao." << endl;
+		cin >> confirmacao;
+	}
+	if (confirmacao == "sim" || confirmacao == "Sim" || confirmacao == "s" || confirmacao == "S")
+	{
+		//servicoEmergencia.addAcidente(Assaltocomercial(local, data, x, y, 0, 0, numFeridos));
+		//servicoEmergencia.addAcidente(Acidente(local, data, x, y));
+		cout << "Assalto comercial criado.";
+	}
+	cin.clear();
+	cin.ignore(1000);
+	cout << "Vai ser direcionado para o menu anterior.";
+	do {
+		cout << '\n' << "Presse a tecla Enter para continuar.";
+	} while (cin.get() != '\n');
+
+	addAssalto();
+	return;
+
+
+	return;
+
+}
+
+void adicionarAssaltoParticular() {
+	system("cls");
+	string local, confirmacao = "";
+	int data, x, y, numFeridos;
+	cout << "Menu adicionar assalto particular" << endl << endl;
+
+	cout << "Qual o local do acidente? ";
+	cin >> local;
+	cout << "\nQuando e que se passou esse acidente? ";			//Melhorar depois
+	cin >> data;
+	cout << "\nQual a localizacao x.";					//Melhorar depois
+	cin >> x;
+	cout << "\nQual a localizacao y.";					//Melhorar depois
+	cin >> y;
+	cout << "\nQual o número de feridos? ";
+	cin >> numFeridos;
+	cout << "Pretende reportar um assalto particular em " << local << " ,na data " << data << " com a localizacao " << x << " " << y << " em que " << numFeridos << " foram feridos?(S, N)" << endl;
+	cin >> confirmacao;
+	while (!((confirmacao == "sim") || (confirmacao == "Sim") || (confirmacao == "nao") || (confirmacao == "Nao") || (confirmacao == "s") || (confirmacao == "n") || (confirmacao == "S") || (confirmacao == "N")))
+	{
+		cout << "String nao reconhecida!! Responda sim ou nao." << endl;
+		cin >> confirmacao;
+	}
+	if (confirmacao == "sim" || confirmacao == "Sim" || confirmacao == "s" || confirmacao == "S")
+	{
+		//servicoEmergencia.addAcidente(Assaltoparticular(local, data, x, y, 0, 0, numFeridos));
+		//servicoEmergencia.addAcidente(Acidente(local, data, x, y));
+		cout << "Assalto particular criado.";
+	}
+	cin.clear();
+	cin.ignore(1000);
+	cout << "Vai ser direcionado para o menu anterior.";
+	do {
+		cout << '\n' << "Presse a tecla Enter para continuar.";
+	} while (cin.get() != '\n');
+
+	addAssalto();
+	return;
+
+
+	return;
+
+}
+
+
 
 void verOsAcidentes() {
 	system("cls");

@@ -1,11 +1,6 @@
 #pragma once
 
-#include <fstream>
-#include "Acidentes.h"
-#include "ServicoEmergencia.h"
-
 #include "menu.h"
-
 
 
 int main() {
