@@ -6,14 +6,16 @@ ServicoEmergencia servicoEmergencia;
 
 
 void menuInicial() {
-
+	
 	cout << "O que pretende fazer?" << endl;
 	cout << "------------------------------------------------" << endl;
-	cout << "[1] Adicionar/remover um acidente?" << endl;
-	cout << "[2] Ver os acidentes?" << endl;
-	cout << "[3] Adicionar/remover postos de socorro?" << endl;
-	cout << "[4] Ver os postos de socorro?" << endl;
-	cout << "[5] Reposta a um acidente?" << endl;
+	cout << "[1] Adicionar acidente?" << endl;
+	cout << "[2] Remover um acidente?" << endl;
+	cout << "[3] Ver os acidentes?" << endl;
+	cout << "[4] Adicionar postos de socorro?" << endl;
+	cout << "[5] Remover postos de socorro?" << endl;
+	cout << "[6] Ver os postos de socorro?" << endl;
+	cout << "[7] Reposta a um acidente?" << endl;
 	cout << "[0] Sair?" << endl;
 	int opcao;
 	cin >> opcao;
@@ -24,21 +26,29 @@ void menuInicial() {
 		adicionarAcidente();
 		return;
 	case 2:
-		verOsAcidentes();
+		//removerAcidente();
 		return;
 	case 3:
-		//adicinarPostos();
+		verOsAcidentes();
 		return;
 	case 4:
-		verOsPostos();
+		//adicinarPostos();
 		return;
 	case 5:
+		//removerPostos();
+		return;
+	case 6:
+		verOsPostos();
+		return;
+	case 7:
 		//respostaAcidentes();
 		return;
 	case 0:
 		exit(0);
 		return;
 	}
+	cin.clear();
+	cin.ignore();
 	system("cls");
 	menuInicial();
 }
@@ -68,6 +78,8 @@ void adicionarAcidente() {
 		//addAcidViacao();
 		return;
 	}
+	cin.clear();
+	cin.ignore();
 	adicionarAcidente();
 }
 
@@ -96,7 +108,8 @@ void addIncendio() {
 		adicionarIncendioApartamento();
 		return;
 	}
-
+	cin.clear();
+	cin.ignore();
 	addIncendio();
 }
 void adicionarIncendioFloresta() {
@@ -126,10 +139,14 @@ void adicionarIncendioFloresta() {
 	{
 		IncendioFlorestal A(local, data, x, y, 0, 0, area);
 		servicoEmergencia.addAcidente(&A);
-		cout << "Incendio Florestal criado.";
+		cout << "Incendio Florestal criado." << endl;
 	}
 
-	
+	cout << "Vai ser direcionado para o menu anterior" << endl;
+	cout << "Prima qualquer tecla." << endl;
+	cin.ignore();
+	cin.ignore();
+
 	addIncendio();
 	return;
 }
@@ -161,9 +178,14 @@ void adicionarIncendioMoradia() {
 	{
 		IncendioMoradia A(local, data, x, y, 0, 0, nPessoas);
 		servicoEmergencia.addAcidente(&A);
-		cout << "Incendio em moradia criado.";
+		cout << "Incendio em moradia criado." << endl;
 	}
 	
+	cout << "Vai ser direcionado para o menu anterior." << endl;
+	cout << "Prima qualquer tecla." << endl;
+	cin.ignore();
+	cin.ignore();
+
 	addIncendio();
 	return;
 }
@@ -194,9 +216,12 @@ void adicionarIncendioApartamento() {
 	{
 		IncendioApartamento A(local, data, x, y, 0, 0, nPessoas);
 		servicoEmergencia.addAcidente(&A);
-		cout << "Incendio em moradia criado.";
+		cout << "Incendio em moradia criado." << endl;
 	}
-
+	cout << "Vai ser direcionado para o menu anterior." << endl;
+	cout << "Prima qualquer tecla." << endl;
+	cin.ignore();
+	cin.ignore();
 	
 	addIncendio();
 	return;
@@ -225,7 +250,8 @@ void addAssalto() {
 		return;
 
 	}
-
+	cin.ignore();
+	cin.ignore();
 	addAssalto();
 }
 
@@ -254,16 +280,15 @@ void adicionarAssaltoComercial() {
 	}
 	if (confirmacao == "sim" || confirmacao == "Sim" || confirmacao == "s" || confirmacao == "S")
 	{
-		//servicoEmergencia.addAcidente(Assaltocomercial(local, data, x, y, 0, 0, numFeridos));
-		//servicoEmergencia.addAcidente(Acidente(local, data, x, y));
-		cout << "Assalto comercial criado.";
+		Assaltocomercial A(local, data, x, y, numFeridos);
+		servicoEmergencia.addAcidente(&A);
+		cout << "Assalto comercial criado." << endl;
 	}
-	cin.clear();
-	cin.ignore(1000);
-	cout << "Vai ser direcionado para o menu anterior.";
-	do {
-		cout << '\n' << "Presse a tecla Enter para continuar.";
-	} while (cin.get() != '\n');
+	cout << "Vai ser direcionado para o menu anterior." << endl;
+	cout << "Prima qualquer tecla." << endl;
+	cin.ignore();
+	cin.ignore();
+	
 
 	addAssalto();
 	return;
@@ -298,23 +323,20 @@ void adicionarAssaltoParticular() {
 	}
 	if (confirmacao == "sim" || confirmacao == "Sim" || confirmacao == "s" || confirmacao == "S")
 	{
-		//servicoEmergencia.addAcidente(Assaltoparticular(local, data, x, y, 0, 0, numFeridos));
-		//servicoEmergencia.addAcidente(Acidente(local, data, x, y));
+		Assaltoparticular A(local, data, x, y, numFeridos);
+		servicoEmergencia.addAcidente(&A);
 		cout << "Assalto particular criado.";
 	}
-	cin.clear();
-	cin.ignore(1000);
-	cout << "Vai ser direcionado para o menu anterior.";
-	do {
-		cout << '\n' << "Presse a tecla Enter para continuar.";
-	} while (cin.get() != '\n');
+
+	cout << "Vai ser direcionado para o menu anterior." << endl;
+	cout << "Prima qualquer tecla." << endl;
+	cin.ignore();
+	cin.ignore();
+
+	
 
 	addAssalto();
 	return;
-
-
-	return;
-
 }
 
 

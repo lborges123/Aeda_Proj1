@@ -77,14 +77,14 @@ public:
 class Assaltoparticular : public Assalto {
 public:
 	Assaltoparticular(string localAcidente, int data, int x, int y, int numFeridos);
-	void print();
+	void printAcid();
 	bool precisadeamb() const;
 };
 
 class Assaltocomercial : public Assalto {
 public:
 	Assaltocomercial(string localAcidente, int data, int x, int y, int numFeridos);
-	void print();
+	void printAcid();
 	bool precisadeamb() const;
 };
 
