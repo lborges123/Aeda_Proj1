@@ -1,5 +1,5 @@
-#pragma once
-#include "Acidentes.h"
+
+#include "Incendios.h"
 
 Incendio::Incendio(string localAcidente, int data, int x, int y, int numCarrosBombeiros, int numBombeiros) : Acidente(localAcidente, data, x, y) {
 	this->numBombeiros = numBombeiros;
@@ -75,7 +75,7 @@ void IncendioMoradia::printAcid() {
 
 void IncendioFlorestal::printAcid() {
 	cout << "Acidente tipo: Incendio florestal " << localAcidente << "na localizacao x = " << coord.first << " y = " << coord.second << " em " << data << endl;
-	cout << " no qual sao precisos " << numCarrosBombeiros << " carros de bombeiros e " << numBombeiros << " bombeiros " << " com " << areaChamas << " hectares em chamas." << endl << endl;
+	cout << " no qual sao precisos " << numCarrosBombeiros << " carros de bombeiros e " << numBombeiros << " bombeiros " << " no qual ha " << areaChamas << " hectares em chamas." << endl << endl;
 }
 IncendioFlorestal::IncendioFlorestal() {
 

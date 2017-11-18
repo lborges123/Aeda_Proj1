@@ -1,7 +1,6 @@
-#pragma once
 #include "PostosDeSocorro.h"
+#include "string.h"
 
-PostoDeSocorro::PostoDeSocorro(){}
 
 PostoDeSocorro::PostoDeSocorro(int numSocorristas, int numVeiculos, string local, int x, int y) {
 	this->numSocorristas = numSocorristas;
@@ -13,5 +12,7 @@ PostoDeSocorro::PostoDeSocorro(int numSocorristas, int numVeiculos, string local
 }
 
 void PostoDeSocorro::setNumVeiculos(int numVeiculos) {
-	this->numVeiculos = numVeiculos;
+	this->numVeiculos += numVeiculos;
 }
+
+//void PostoDeSocorro::printPostos(){}

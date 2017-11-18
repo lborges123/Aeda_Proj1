@@ -1,10 +1,12 @@
 #pragma once
 
 #include "ServicoEmergencia.h"
+#include "Incendios.h"
+
 
 void menuInicial();
 void adicionarAcidente();
-void verOsPostos();
+void verOsPostosSocorro();
 void addIncendio();
 void verOsAcidentes();
 void adicionarIncendioFloresta();

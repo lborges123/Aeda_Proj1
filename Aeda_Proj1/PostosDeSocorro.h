@@ -6,14 +6,13 @@
 
 class PostoDeSocorro {
 	friend class Acidente;
-private:
+protected:
 	int numSocorristas;
 	int numVeiculos;
 	string local;
 	pair<int, int> coord;
 public:
 	PostoDeSocorro(int numSocorristas, int numVeiculos, string local, int x, int y);
-	PostoDeSocorro();
 	void setNumVeiculos(int numVeiculos);
 	//virtual string tipo() = 0;
 	//virtual void printPostos();
@@ -38,4 +37,14 @@ public:
 	Policia(int numSocorristas, int numVeiculos, string local, int x, int y, int numCarros, int numMotos);
 	//string tipo() = 0;
 	void printPostos();
+};
+
+class Inem : public PostoDeSocorro {
+private:
+	int numAmbulancias;
+	int numCarro;
+	int numMoto;
+public:
+	Inem(int numSocorristas, int numVeiculos, string local, int x, int y, int numAmbulancias, int numCarro, int numMoto);
+	void PrintPostos();
 };

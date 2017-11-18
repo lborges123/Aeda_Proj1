@@ -15,13 +15,13 @@ void ServicoEmergencia::printAcidentes() {
 	}
 }
 
-void ServicoEmergencia::printPostos() {
+//void ServicoEmergencia::printPostos() {
 	/*	for (int i = 0; i < postosSocorro.size(); i++){
 	postosSocorro[i]->printPostos();		}		//dynamic_cast<PostosDeSocorro *> */
-}
+//}
 
 
-void tratamentoDeAcidentes(Acidente a) {
+/*void tratamentoDeAcidentes(Acidente a) {
 	Incendio * pba = new Incendio;
 
 	if (!(dynamic_cast<Incendio*> (pba)))			// ve se a e incendio
@@ -41,3 +41,4 @@ void tratamentoDeAcidentes(Acidente a) {
 
 	}
 }
+*/
