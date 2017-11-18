@@ -13,12 +13,9 @@ public:
 	void addAcidente(Acidente * a);
 	void addPostoSocorro(PostoDeSocorro *p);
 	void printAcidentes();
-	void printPostos() {
-	/*	for (int i = 0; i < postosSocorro.size(); i++){ 
-			postosSocorro[i]->printPostos();		}		//dynamic_cast<PostosDeSocorro *> */
-	}
+	void printPostos();
 	void removeAcidente(Acidente a);
 	void removePostoSocorro(PostoDeSocorro p);
-	void tratamentoDeAcidentes(Acidente a);
+	void tratamentoDeAcidentes(Acidente *a);
 };
 

@@ -21,22 +21,19 @@ void ServicoEmergencia::printPostos() {
 }
 
 
-void tratamentoDeAcidentes(Acidente a) {
-	Incendio * pba = new Incendio;
+void ServicoEmergencia::tratamentoDeAcidentes(Acidente * a) {
 
-	if (!(dynamic_cast<Incendio*> (pba)))			// ve se a e incendio
+	if (!(dynamic_cast<Incendio*> (a)))			// ve se a e incendio
+	{
+		
+	}
+
+	if (!(dynamic_cast<Incendio*> (a)))			// ve se a e incendio
 	{
 
 	}
-	Assalto * pba = new Assalto;
 
-	if (!(dynamic_cast<Incendio*> (pba)))			// ve se a e incendio
-	{
-
-	}
-	AcidenteViacao * pba = new AcidenteViacao;
-
-	if (!(dynamic_cast<Incendio*> (pba)))			// ve se a e incendio
+	if (!(dynamic_cast<Incendio*> (a)))			// ve se a e incendio
 	{
 
 	}
