@@ -19,5 +19,3 @@ public:
 	void removePostoSocorro(P);
 	void tratamentoDeAcidentes(A);
 };
-
-
