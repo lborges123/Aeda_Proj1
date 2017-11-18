@@ -11,9 +11,9 @@ protected:
 
 
 public:
-	//(construtor vazio)
-	INEM(int numSocorristas, int numVeiculos, string local, int x, int y, int numAmbulancias, int numCarros, int numMotos);
 
+	INEM(int numSocorristas, int numVeiculos, string local, int x, int y, int numAmbulancias, int numCarros, int numMotos);
+	INEM();
 	/* metodos get*/
 	int getNumAmbulacias();
 	int getNumCarros();

@@ -1,5 +1,15 @@
-#include "ServicoEmergencia.h"
+
 #pragma once
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include <utility>
+#include <fstream>
+
+using namespace std;
+
+
 
 class Acidente {
 	friend class PostoDeSocorro;
@@ -9,6 +19,8 @@ protected:
 	pair <int, int> coord;
 public:
 	Acidente(string localAcidente, int data, int x, int y);
+	Acidente();
+	virtual void printAcid();
 };
 class Incendio : public Acidente {
 protected:
@@ -16,6 +28,7 @@ protected:
 	int numBombeiros;
 public:
 	Incendio(string localAcidente, int data, int x, int y, int numCarrosBombeiros, int numBombeiros);
+	Incendio();
 	void setNumCarros(int numCarros);
 	void setNumBombeiros(int numBombeiros);
 };
@@ -25,9 +38,10 @@ private:
 	int areaChamas;
 public:
 	IncendioFlorestal(string localAcidente, int data, int x, int y, int numCarrosBombeiros, int numBombeiros, int areaChamas);
+	IncendioFlorestal();
 	int numCarrosNecessarios(int areaArdida);
 	int numBombeirosNecessarios(int areaArdida);
-	void print();
+	void printAcid();
 };
 class IncendioMoradia : public Incendio {
 private:
@@ -36,7 +50,7 @@ public:
 	IncendioMoradia(string localAcidente, int data, int x, int y, int numCarrosBombeiros, int numBombeiros, int nPessoas);
 	int numCarrosNecessarios(int nPessoas);
 	int numBombeirosNecessarios(int nPessoas);
-	void print();
+	void printAcid();
 };
 class IncendioApartamento : public Incendio {
 private:
@@ -45,35 +59,33 @@ public:
 	IncendioApartamento(string localAcidente, int data, int x, int y, int numCarrosBombeiros, int numBombeiros, int andares);
 	int numCarrosNecessarios(int andares);
 	int numBombeirosNecessarios(int andares);
-	void print();
+	void printAcid();
 };
 
 class Assalto : public Acidente {
-private:
+protected:
 	int numFeridos;
+	bool precisadeamb;
 public:
-	virtual bool precisadeamb() const = 0;
+	
 	Assalto(string localAcidente, int data, int x, int y, int numFeridos);
+	Assalto::Assalto();
+	void setNumFeridos(int numFeridos);
 };
 
 
 class Assaltoparticular : public Assalto {
-private:
-	int numFeridos;
-
 public:
 	Assaltoparticular(string localAcidente, int data, int x, int y, int numFeridos);
-	virtual bool precisadeamb() const = 0;
+	void print();
+	bool precisadeamb() const;
 };
 
 class Assaltocomercial : public Assalto {
-private:
-	int numFeridos;
-
 public:
 	Assaltocomercial(string localAcidente, int data, int x, int y, int numFeridos);
-	virtual bool precisadeamb() const = 0;
-
+	void print();
+	bool precisadeamb() const;
 };
 
 /*class AcidenteViacaoNacional : public AcidenteViacao {}

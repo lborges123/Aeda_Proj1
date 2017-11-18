@@ -1,21 +1,23 @@
 #pragma once
 
-#include <iostream>
-#include <string>
-#include <vector>
-#include <utility>
-using namespace std;
+#include "AcidentesViacao.h"
 
-template <class A, class P>
+
+
 class ServicoEmergencia {
 private:
-	vector <A *> acidentes;
-	vector <P *> postosSocorro;
+	vector <Acidente *> acidentes;
+	vector <PostoDeSocorro *> postosSocorro;
 public:
 	ServicoEmergencia();
-	void addAcidente(A);
-	void addPostoSocorro(P);
-	void removeAcidente(A);
-	void removePostoSocorro(P);
-	void tratamentoDeAcidentes(A);
+	void addAcidente(Acidente * a);
+	void addPostoSocorro(PostoDeSocorro *p);
+	void printAcidentes();
+	void printPostos() {
+	/*	for (int i = 0; i < postosSocorro.size(); i++){
+			postosSocorro[i]->printPostos();		}		//dynamic_cast<PostosDeSocorro *> */
+	}
+	void removeAcidente(Acidente a);
+	void removePostoSocorro(PostoDeSocorro p);
+	void tratamentoDeAcidentes(Acidente a);
 };

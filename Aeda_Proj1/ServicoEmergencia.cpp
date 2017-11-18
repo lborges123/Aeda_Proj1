@@ -1,36 +1,43 @@
-#pragma once
 #include "ServicoEmergencia.h"
 
+ServicoEmergencia::ServicoEmergencia(){}
 
-template <class A, class P>
-ServicoEmergencia<A, P>::ServicoEmergencia() {
+void ServicoEmergencia::addAcidente(Acidente * a) {
+	acidentes.push_back(a);
+}
+void ServicoEmergencia::addPostoSocorro(PostoDeSocorro *p) {
+	postosSocorro.push_back(p); 
 }
 
-
-template <class A, class P>
-void ServicoEmergencia<A,P>::addAcidente(A) {
-	acidentes.push_back(*A);
-}
-
-template <class A, class P>
-void ServicoEmergencia<A, P>::addPostoSocorro(P) {
-	postosSocorro.push_back(*P);
-
-}
-
-template<class A, class P>
-void ServicoEmergencia<A, P>::printAcidentes() {
-	for (int i = 0; i < acientes.size(); i++)
-	{
-		acidentes[i].print();
+void ServicoEmergencia::printAcidentes() {
+	for (unsigned int i = 0; i < acidentes.size(); i++) {
+		acidentes[i]->printAcid(); 
 	}
-
 }
-template<class A, class P>
-void ServicoEmergencia<A, P>::printPostos() {
-	for (int i = 0; i < postosSocorro.size(); i++)
-	{
-		postosSocorro[i].print();
-	}
 
+void ServicoEmergencia::printPostos() {
+	/*	for (int i = 0; i < postosSocorro.size(); i++){
+	postosSocorro[i]->printPostos();		}		//dynamic_cast<PostosDeSocorro *> */
+}
+
+
+void tratamentoDeAcidentes(Acidente a) {
+	Incendio * pba = new Incendio;
+
+	if (!(dynamic_cast<Incendio*> (pba)))			// ve se a e incendio
+	{
+
+	}
+	Assalto * pba = new Assalto;
+
+	if (!(dynamic_cast<Incendio*> (pba)))			// ve se a e incendio
+	{
+
+	}
+	AcidenteViacao * pba = new AcidenteViacao;
+
+	if (!(dynamic_cast<Incendio*> (pba)))			// ve se a e incendio
+	{
+
+	}
 }

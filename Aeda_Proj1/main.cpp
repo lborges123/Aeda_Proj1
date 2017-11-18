@@ -1,3 +1,5 @@
+#pragma once
+
 #include <fstream>
 #include "Acidentes.h"
 #include "ServicoEmergencia.h"
@@ -14,7 +16,6 @@ void adicionarAssaltoParticular();
 //ServicoEmergencia<Acidente, PostoDeSocorro> servicoEmergencia;
 
 
-void menuInicial() {
 
 	cout << "O que pretende fazer?" << endl;
   cout << "------------------------------------------------" << endl;

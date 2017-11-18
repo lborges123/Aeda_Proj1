@@ -149,6 +149,7 @@
     <ClInclude Include="Acidentes.h" />
     <ClInclude Include="AcidentesViacao.h" />
     <ClInclude Include="INEM.h" />
+    <ClInclude Include="menu.h" />
     <ClInclude Include="PostosDeSocorro.h" />
     <ClInclude Include="ServicoEmergencia.h" />
   </ItemGroup>
@@ -160,9 +161,9 @@
     <ClCompile Include="Incendios.cpp" />
     <ClCompile Include="INEM.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Policia.cpp" />
     <ClCompile Include="PostoDeSocorro.cpp" />
-    <ClCompile Include="ServicoEmergencia.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

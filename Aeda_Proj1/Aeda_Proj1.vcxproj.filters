@@ -30,6 +30,9 @@
     <ClInclude Include="PostosDeSocorro.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Acidentes.cpp">
@@ -37,9 +40,6 @@
     </ClCompile>
     <ClCompile Include="Incendios.cpp">
       <Filter>Resource Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PostoDeSocorro.cpp">
       <Filter>Resource Files</Filter>
@@ -59,7 +59,10 @@
     <ClCompile Include="AcidentesViacao.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="ServicoEmergencia.cpp">
+    <ClCompile Include="Menu.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>

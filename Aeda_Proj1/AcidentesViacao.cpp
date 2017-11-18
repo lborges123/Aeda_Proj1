@@ -13,3 +13,4 @@ bool AcidenteViacao::precisadeamb() const {
 		return true;
 	return false;
 }
+AcidenteViacao::AcidenteViacao(){};
