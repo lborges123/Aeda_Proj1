@@ -16,28 +16,35 @@ class Acidente {
 protected:
 	string localAcidente;
 	int data;
-	pair <int, int> coord;
+	pair <double, double> coord;
 public:
-	Acidente(string localAcidente, int data, int x, int y);
+	Acidente(string localAcidente, int data, double x, double y);
 	Acidente();
 	virtual void printAcid();
+	double getx();
+	double gety();
+	virtual int getNumCarros() { return 0; }
+	virtual int getNumBombeiros() { return 0; }
 };
+
 class Incendio : public Acidente {
 protected:
 	int numCarrosBombeiros;
 	int numBombeiros;
 public:
-	Incendio(string localAcidente, int data, int x, int y, int numCarrosBombeiros, int numBombeiros);
+	Incendio(string localAcidente, int data, double x, double y, int numCarrosBombeiros, int numBombeiros);
 	Incendio();
 	void setNumCarros(int numCarros);
 	void setNumBombeiros(int numBombeiros);
+	int getNumCarros();
+	int getNumBombeiros();
 };
 
 class IncendioFlorestal : public Incendio {
 private:
 	int areaChamas;
 public:
-	IncendioFlorestal(string localAcidente, int data, int x, int y, int numCarrosBombeiros, int numBombeiros, int areaChamas);
+	IncendioFlorestal(string localAcidente, int data, double x, double y, int numCarrosBombeiros, int numBombeiros, int areaChamas);
 	IncendioFlorestal();
 	int numCarrosNecessarios(int areaArdida);
 	int numBombeirosNecessarios(int areaArdida);
@@ -47,7 +54,7 @@ class IncendioMoradia : public Incendio {
 private:
 	int nPessoas;
 public:
-	IncendioMoradia(string localAcidente, int data, int x, int y, int numCarrosBombeiros, int numBombeiros, int nPessoas);
+	IncendioMoradia(string localAcidente, int data, double x, double y, int numCarrosBombeiros, int numBombeiros, int nPessoas);
 	int numCarrosNecessarios(int nPessoas);
 	int numBombeirosNecessarios(int nPessoas);
 	void printAcid();
@@ -56,7 +63,7 @@ class IncendioApartamento : public Incendio {
 private:
 	int andares;
 public:
-	IncendioApartamento(string localAcidente, int data, int x, int y, int numCarrosBombeiros, int numBombeiros, int andares);
+	IncendioApartamento(string localAcidente, int data, double x, double y, int numCarrosBombeiros, int numBombeiros, int andares);
 	int numCarrosNecessarios(int andares);
 	int numBombeirosNecessarios(int andares);
 	void printAcid();
@@ -68,22 +75,24 @@ protected:
 	bool precisadeamb;
 public:
 	
-	Assalto(string localAcidente, int data, int x, int y, int numFeridos);
+	Assalto(string localAcidente, int data, double x, double y, int numFeridos);
 	Assalto::Assalto();
 	void setNumFeridos(int numFeridos);
+	int getNumCarros();
+	int getNumBombeiros();
 };
 
 
 class Assaltoparticular : public Assalto {
 public:
-	Assaltoparticular(string localAcidente, int data, int x, int y, int numFeridos);
+	Assaltoparticular(string localAcidente, int data, double x, double y, int numFeridos);
 	void printAcid();
 	bool precisadeamb() const;
 };
 
 class Assaltocomercial : public Assalto {
 public:
-	Assaltocomercial(string localAcidente, int data, int x, int y, int numFeridos);
+	Assaltocomercial(string localAcidente, int data, double x, double y, int numFeridos);
 	void printAcid();
 	bool precisadeamb() const;
 };

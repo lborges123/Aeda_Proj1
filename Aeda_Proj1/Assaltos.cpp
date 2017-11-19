@@ -1,14 +1,14 @@
 #pragma once
 #include "Acidentes.h"
-Assalto::Assalto(string localAcidente, int data, int x, int y, int numFeridos) : Acidente(localAcidente, data, x, y) {
+Assalto::Assalto(string localAcidente, int data, double x, double y, int numFeridos) : Acidente(localAcidente, data, x, y) {
 	this->numFeridos = numFeridos;
 }
 Assalto::Assalto(){}
 
-Assaltoparticular::Assaltoparticular(string localAcidente, int data, int x, int y, int numFeridos): Assalto(localAcidente, data,x, y, numFeridos) {
+Assaltoparticular::Assaltoparticular(string localAcidente, int data, double x, double y, int numFeridos): Assalto(localAcidente, data,x, y, numFeridos) {
 }
 
-Assaltocomercial::Assaltocomercial(string localAcidente, int data, int x, int y, int numFeridos) : Assalto(localAcidente, data, x, y, numFeridos) {
+Assaltocomercial::Assaltocomercial(string localAcidente, int data, double x, double y, int numFeridos) : Assalto(localAcidente, data, x, y, numFeridos) {
 
 }
 
@@ -39,4 +39,13 @@ void Assaltoparticular::printAcid() {
 	cout << "Acidente tipo: Assalto particular em " << localAcidente  << "na localizacao x = " << coord.first << " y = " << coord.second << " em " << data << endl;
 	cout << " no qual houveram " << numFeridos << " Feridos " << endl;
 
+}
+
+int Assalto::getNumCarros() {
+	//return numCarrosBombeiros;
+	return 0;
+}
+int Assalto::getNumBombeiros() {
+	//return numBombeiros;
+	return 0;
 }

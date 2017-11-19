@@ -1,19 +1,19 @@
 #pragma once
 #include "Acidentes.h"
 
-Incendio::Incendio(string localAcidente, int data, int x, int y, int numCarrosBombeiros, int numBombeiros) : Acidente(localAcidente, data, x, y) {
+Incendio::Incendio(string localAcidente, int data, double x, double y, int numCarrosBombeiros, int numBombeiros) : Acidente(localAcidente, data, x, y) {
 	this->numBombeiros = numBombeiros;
 	this->numCarrosBombeiros = numCarrosBombeiros;
 }
 Incendio::Incendio() {}
 
-IncendioFlorestal::IncendioFlorestal(string localAcidente, int data, int x, int y, int numCarrosBombeiros, int numBombeiros, int areaChamas) : Incendio(localAcidente, data, x, y, numCarrosBombeiros, numBombeiros) {
+IncendioFlorestal::IncendioFlorestal(string localAcidente, int data, double x, double y, int numCarrosBombeiros, int numBombeiros, int areaChamas) : Incendio(localAcidente, data, x, y, numCarrosBombeiros, numBombeiros) {
 	this->areaChamas = areaChamas;
 	setNumCarros(numCarrosNecessarios(areaChamas));
 	setNumBombeiros(numBombeirosNecessarios(areaChamas));
 }
 
-IncendioMoradia::IncendioMoradia(string localAcidente, int data, int x, int y, int numCarrosBombeiros, int numBombeiros, int nPessoas) : Incendio(localAcidente, data, x, y, numCarrosBombeiros, numBombeiros) {
+IncendioMoradia::IncendioMoradia(string localAcidente, int data, double x, double y, int numCarrosBombeiros, int numBombeiros, int nPessoas) : Incendio(localAcidente, data, x, y, numCarrosBombeiros, numBombeiros) {
 	this->nPessoas = nPessoas;
 	setNumCarros(numCarrosNecessarios(nPessoas));
 	setNumBombeiros(numBombeirosNecessarios(nPessoas));
@@ -41,7 +41,7 @@ int IncendioMoradia::numBombeirosNecessarios(int nPessoas) {
 	return bombeiros;
 
 }
-IncendioApartamento::IncendioApartamento(string localAcidente, int data, int x, int y, int numCarrosBombeiros, int numBombeiros, int andares) : Incendio(localAcidente, data, x, y, numCarrosBombeiros, numBombeiros) {
+IncendioApartamento::IncendioApartamento(string localAcidente, int data, double x, double y, int numCarrosBombeiros, int numBombeiros, int andares) : Incendio(localAcidente, data, x, y, numCarrosBombeiros, numBombeiros) {
 	this->andares = andares;
 	setNumCarros(numCarrosNecessarios(andares));
 	setNumBombeiros(numBombeirosNecessarios(andares));
@@ -79,4 +79,12 @@ void IncendioFlorestal::printAcid() {
 }
 IncendioFlorestal::IncendioFlorestal() {
 
+}
+
+
+int Incendio::getNumCarros() {
+	return numCarrosBombeiros;
+}
+int Incendio::getNumBombeiros() {
+	return numBombeiros;
 }

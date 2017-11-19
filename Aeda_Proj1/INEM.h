@@ -12,11 +12,13 @@ protected:
 
 public:
 
-	INEM(int numSocorristas, int numVeiculos, string local, int x, int y, int numAmbulancias, int numCarros, int numMotos);
+	INEM(int numSocorristas, int numVeiculos, string local, double x, double y, int numAmbulancias, int numCarros, int numMotos);
 	INEM();
 	/* metodos get*/
 	int getNumAmbulacias();
-	int getNumCarros();
-	int getNumMotos();
-
+	int getNumCarros() { return 0; }
+	int getNumMotos() { return 0; }
+	void printPostos() {};
+	double getProximidade(double x, double y);
+	int tratamentoDeIncendios(Acidente * a) { return 1; }
 };

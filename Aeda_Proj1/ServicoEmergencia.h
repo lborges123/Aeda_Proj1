@@ -1,6 +1,7 @@
 #pragma once
 
 #include "AcidentesViacao.h"
+#include "INEM.h"
 
 
 
@@ -14,8 +15,12 @@ public:
 	void addPostoSocorro(PostoDeSocorro *p);
 	void printAcidentes();
 	void printPostos();
-	void removeAcidente(Acidente a);
-	void removePostoSocorro(PostoDeSocorro p);
+	void removeAcidente(Acidente *a);
+	void removePostoSocorro(PostoDeSocorro *p);
 	void tratamentoDeAcidentes(Acidente *a);
+	void tratamentoDeIncendios(Acidente *a);
+	vector <PostoDeSocorro *> getBombeiros();
+	vector <PostoDeSocorro *> getINEM();
+	vector <PostoDeSocorro *> getPolicia();
 };
 

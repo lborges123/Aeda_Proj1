@@ -2,7 +2,7 @@
 #include "Acidentes.h"
 
 
-Acidente::Acidente(string localAcidente, int data, int x, int y) {
+Acidente::Acidente(string localAcidente, int data, double x, double y) {
 	this->localAcidente = localAcidente;
 	this->data = data;
 	pair<int, int> coord (x,y);
@@ -12,3 +12,10 @@ Acidente::Acidente(string localAcidente, int data, int x, int y) {
 
 Acidente::Acidente(){}
 void Acidente::printAcid() {}
+double Acidente::getx() {
+	return coord.first;
+}
+
+double Acidente::gety() {
+	return coord.second;
+}
