@@ -338,6 +338,51 @@ void adicionarAssaltoParticular() {
 	addAssalto();
 	return;
 }
+void adicionarAcidenteViacao() {
+	system("cls");
+	string confirmacao = "";
+	int data, x, y, fgraves, veiculos, ae;
+	string local;
+	cout << "Menu adicionar acidente de viacao" << endl << endl;
+
+	cout << "Qual o local do acidente? (0 - autoestrada ou 1 - estrada nacional)";
+	cin >> ae;
+	cout << "Qual a localizacao do acidente?";
+	cin >> local;
+	cout << "\nQuando e que se passou esse acidente? ";			//Melhorar depois
+	cin >> data;
+	cout << "\nQual a localizacao x.";					//Melhorar depois
+	cin >> x;
+	cout << "\nQual a localizacao y.";					//Melhorar depois
+	cin >> y;
+	cout << "\nQuantos veiculos foram envolvidos? ";
+	cin >> veiculos;
+	cout << "\nQuantos feridos graves? ";
+	cin >> fgraves;
+	cout << "Pretende construir um acidente grave, em " << local << ", na data " << data << " com a localizacao " << x << " " << y << " em que foram envolidos "
+		<< veiculos << " veiculos e " << fgraves << " feridos graves?(S, N)" << endl;
+	cin >> confirmacao;
+	while (!((confirmacao == "sim") || (confirmacao == "Sim") || (confirmacao == "nao") || (confirmacao == "Nao") || (confirmacao == "s") || (confirmacao == "n") || (confirmacao == "S") || (confirmacao == "N")))
+	{
+		cout << "String nao reconhecida!! Responda sim ou nao." << endl;
+		cin >> confirmacao;
+	}
+	if (confirmacao == "sim" || confirmacao == "Sim" || confirmacao == "s" || confirmacao == "S")
+	{
+
+		AcidenteViacao a(local, data, ae, x, y, fgraves, veiculos);
+		servicoEmergencia.addAcidente(&a);
+
+		cout << "Acidente de viacao criado.";
+	}
+	cout << "Vai ser direcionado para o menu anterior." << endl;
+	cout << "Prima qualquer tecla." << endl;
+	cin.ignore();
+	cin.ignore();
+
+	adicionarAcidenteViacao();
+	return;
+}
 
 
 

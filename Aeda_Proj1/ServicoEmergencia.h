@@ -2,7 +2,7 @@
 
 #include "AcidentesViacao.h"
 #include "INEM.h"
-
+#include "AcidentesViacao.h"
 
 
 class ServicoEmergencia {
@@ -22,5 +22,6 @@ public:
 	vector <PostoDeSocorro *> getBombeiros();
 	vector <PostoDeSocorro *> getINEM();
 	vector <PostoDeSocorro *> getPolicia();
+	void adicionarAcidenteViacao();
 };
 
