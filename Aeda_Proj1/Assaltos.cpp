@@ -1,23 +1,22 @@
 #pragma once
 #include "Acidentes.h"
-Assalto::Assalto(string localAcidente, int data, double x, double y, int numFeridos) : Acidente(localAcidente, data, x, y) {
-	this->numFeridos = numFeridos;
+Assalto::Assalto(string localAcidente, int data, double x, double y, int numCarros, int numSocorristas) : Acidente(localAcidente, data, x, y) {
+	this->numCarros = numCarros;
+	this->numSocorristas = numSocorristas;
 }
 Assalto::Assalto(){}
 
-Assaltoparticular::Assaltoparticular(string localAcidente, int data, double x, double y, int numFeridos): Assalto(localAcidente, data,x, y, numFeridos) {
-}
-
-Assaltocomercial::Assaltocomercial(string localAcidente, int data, double x, double y, int numFeridos) : Assalto(localAcidente, data, x, y, numFeridos) {
-
-}
-
-void Assalto::setNumFeridos(int numFeridos) {
+Assaltoparticular::Assaltoparticular(string localAcidente, int data, double x, double y,int numCarros, int NumSocorristas, int numFeridos): Assalto(localAcidente, data,x, y, numCarros, NumSocorristas) {
 	this->numFeridos = numFeridos;
 }
 
+Assaltocomercial::Assaltocomercial(string localAcidente, int data, double x, double y, int numCarros, int NumSocorristas, int numFeridos) : Assalto(localAcidente, data, x, y, numCarros, NumSocorristas) {
+	this->numFeridos = numFeridos;
+}
+
+
 bool Assaltocomercial::precisadeamb() const {
-	if (numFeridos > 2)
+	if (numFeridos > 0)
 		return true;
 	return false;
 }
@@ -45,7 +44,7 @@ int Assalto::getNumCarros() {
 	//return numCarrosBombeiros;
 	return 0;
 }
-int Assalto::getNumBombeiros() {
+int Assalto::getNumSocorristas() {
 	//return numBombeiros;
 	return 0;
 }

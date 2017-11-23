@@ -9,7 +9,7 @@
 using namespace std;
 
 /*
-* Reprsenta um acidente
+* Representa um acidente
 */
 class Acidente {
 	friend class PostoDeSocorro;
@@ -157,7 +157,7 @@ public:
 	/**
 	* @brief Construtor da classe IncendioFlorestal
 	*
-	* Construtor da classe IncendioFlorestal, subclasse de Incendio, subclasse de Incendio.
+	* Construtor da classe IncendioFlorestal, subclasse de Incendio, subclasse de Acidente.
 	*
 	* @param localAcidente local do acidente.
 	* @param data Dia do Incendio.
@@ -204,7 +204,7 @@ public:
 	/**
 	* @brief Construtor da classe IncendioMoradia
 	*
-	* Construtor da classe IncendioMoradia, subclasse de Incendio, subclasse de Incendio.
+	* Construtor da classe IncendioMoradia, subclasse de Incendio, subclasse de acidente.
 	*
 	* @param localAcidente local do acidente.
 	* @param data Dia do Incendio.
@@ -245,7 +245,7 @@ public:
 };
 class IncendioApartamento : public Incendio {
 private:
-	/*
+	/**
 	* Numero de andares do predio
 	*/
 	int andares;
@@ -253,7 +253,7 @@ public:
 	/**
 	* @brief Construtor da classe IncendioApartamento
 	*
-	* Construtor da classe IncendioApartamento, subclasse de Incendio, subclasse de Incendio.
+	* Construtor da classe IncendioApartamento, subclasse de Incendio, subclasse de Acidente.
 	*
 	* @param localAcidente local do acidente.
 	* @param data Dia do Incendio.
@@ -295,28 +295,72 @@ public:
 
 class Assalto : public Acidente {
 protected:
-	int numFeridos;
-	bool precisadeamb;
+	/**
+	* Numero de carros necessarios para combater o Assalto.
+	*/
+	int numCarros;
+	/**
+	* Numero de socorristas necessarios para combater o Assalto.
+	*/
+	int numSocorristas;
 public:
-
-	Assalto(string localAcidente, int data, double x, double y, int numFeridos);
+	/**
+	* @brief Construtor da classe Assalto
+	*
+	* Construtor da classe Assalto, subclasse de Acidente.
+	*
+	* @param localAcidente local do acidente.
+	* @param data Dia do Incendio.
+	* @param x Longitude do local do acidente.
+	* @param y Latitude do local do acidente.
+	* @param numCarros Numero de carros necessarios para combater o assalto.
+	* @param NumSocorristas Numero de socorristas necessarios para combater o assalto.
+	*/
+	Assalto(string localAcidente, int data, double x, double y, int numCarros, int NumSocorristas);
+	/**
+	* @brief Construtor padrao da classe Assalto
+	*
+	* Construtor padrao da classe Assalto, subclasse de Acidentes
+	*
+	*/
 	Assalto::Assalto();
-	void setNumFeridos(int numFeridos);
+	/**
+	* @brief Funcao que retorna o numero de carros necessarios.
+	* Funcao que retorna o numero de carros da classe assalto.
+	*
+	* @return numCarros O numero de carros necessarios para combater o assalto.
+	*/
 	int getNumCarros();
-	int getNumBombeiros();
+	/**
+	* @brief Funcao que retorna o numero de carros necessarios.
+	* Funcao que retorna o numero de carros da classe assalto.
+	*
+	* @return numCarros O numero de carros necessarios para combater o assalto.
+	*/
+	int getNumSocorristas();
 };
 
 class Assaltoparticular : public Assalto {
+private:
+	/**
+	* Numero de feridos
+	*/
+	int numFeridos;
 public:
-	Assaltoparticular(string localAcidente, int data, double x, double y,
+	Assaltoparticular(string localAcidente, int data, double x, double y, int numCarros , int numSocorristas,
 		int numFeridos);
 	void printAcid();
 	bool precisadeamb() const;
 };
 
 class Assaltocomercial : public Assalto {
+private:
+	/**
+	* Numero de feridos
+	*/
+	int numFeridos;
 public:
-	Assaltocomercial(string localAcidente, int data, double x, double y,
+	Assaltocomercial(string localAcidente, int data, double x, double y, int numCarros, int numSocorristas,
 		int numFeridos);
 	void printAcid();
 	bool precisadeamb() const;
