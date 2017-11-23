@@ -2,7 +2,7 @@
 #include "string.h"
 
 
-PostoDeSocorro::PostoDeSocorro(int numSocorristas, int numVeiculos, string local, int x, int y) {
+PostoDeSocorro::PostoDeSocorro(int numSocorristas, int numVeiculos, string local, double x, double y) {
 	this->numSocorristas = numSocorristas;
 	this->local = local;
 	this->numSocorristas = numSocorristas;

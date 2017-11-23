@@ -1,10 +1,13 @@
 
 #pragma once
 
+<<<<<<< HEAD
 
 #include <fstream>
 
 
+=======
+>>>>>>> 439719ca816171d244ce83c6accb3c13c745512d
 #include "menu.h"
 
 void addIncendio();
@@ -223,8 +226,11 @@ void adicionarAcidenteViacao() {
 
 
 
+<<<<<<< HEAD
 */
 
+=======
+>>>>>>> 439719ca816171d244ce83c6accb3c13c745512d
 int main() {
 
 

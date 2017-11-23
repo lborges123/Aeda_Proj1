@@ -173,6 +173,13 @@
     <ClCompile Include="..\..\..\..\eclipse-workspace\Projeto AEDA\src\PostoDeSocorro.cpp" />
     <ClCompile Include="..\..\..\..\eclipse-workspace\Projeto AEDA\src\ServicoEmergencia.cpp" />
     <ClCompile Include="main.cpp" />
+<<<<<<< HEAD
+=======
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Policia.cpp" />
+    <ClCompile Include="PostoDeSocorro.cpp" />
+    <ClCompile Include="ServicoEmergencia.cpp" />
+>>>>>>> 439719ca816171d244ce83c6accb3c13c745512d
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
